@@ -31,7 +31,8 @@ public class AccountController {
 
     @GetMapping("/{userId}")
     public List<AccountDto> findByUserId(@PathVariable Long userId){
-        User user = this.userService.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = this.userService.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
         List<AccountingEntry> accountingEntries = this.accountService.findByUser(user);
         return accountingEntries.parallelStream().map(accountMapper::mapToDto).collect(Collectors.toList());
     }
