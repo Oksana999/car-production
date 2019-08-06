@@ -16,4 +16,15 @@ public class AccountDto {
     private Long userId;
 
     private LocalDateTime date;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public void setUserId(User user) {
+    }
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Data
 @Table(name = "cars")
@@ -18,7 +19,7 @@ public class Car extends BaseEntity {
     @Column
     private String yearBuild;
     @Column
-    private double price;
+    private BigDecimal price;
 
     @Column
     private String imageName;

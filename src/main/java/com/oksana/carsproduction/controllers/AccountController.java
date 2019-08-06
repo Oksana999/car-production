@@ -25,8 +25,8 @@ public class AccountController {
     private final UserService userService;
 
     @PostMapping
-    public AccountDto create (AccountingEntry accountingEntry){
-       return this.accountMapper.mapToDto(this.accountService.create(accountingEntry));
+    public AccountDto create (AccountDto accountDto){
+       return this.accountMapper.mapToDto(this.accountService.create(this.accountMapper.mapToEntity(accountDto)));
     }
 
     @GetMapping("/{userId}")
